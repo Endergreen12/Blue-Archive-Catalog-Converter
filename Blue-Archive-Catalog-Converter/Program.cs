@@ -33,10 +33,14 @@ if(specifiedCatalogType == CatalogType.TableCatalog)
     catalogType = typeof(TableCatalog);
 }
 
-var outputPathArray = outputFilePath.Split(Path.DirectorySeparatorChar).SkipLast(1).ToArray();
-if(!Directory.Exists(Path.Combine(outputPathArray)))
+var outputPathArray = outputFilePath.Split(Path.DirectorySeparatorChar);
+if(outputPathArray.Length > 1)
 {
-    Directory.CreateDirectory(Path.Combine(outputPathArray));
+    outputPathArray = outputPathArray.SkipLast(1).ToArray();
+    if(!Directory.Exists(Path.Combine(outputPathArray)))
+    {
+        Directory.CreateDirectory(Path.Combine(outputPathArray));
+    }
 }
 ConvertCatalog(inputFilePath, outputFilePath, specifiedCatalogType, catalogType, jsonToBytes);
 
