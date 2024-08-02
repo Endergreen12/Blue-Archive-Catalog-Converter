@@ -6,7 +6,6 @@
     <RootNamespace>Blue_Archive_Catalog_Converter</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-	<PublishTrimmed>True</PublishTrimmed>
 	<PublishSingleFile>True</PublishSingleFile>
   </PropertyGroup>
 
